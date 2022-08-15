@@ -12,6 +12,8 @@
   "author": "priority",
   "scripts": {
     "cz": "git add . && czg",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0",
     "lint:fix": "eslint --fix . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json",
     "prepare": "husky install"
