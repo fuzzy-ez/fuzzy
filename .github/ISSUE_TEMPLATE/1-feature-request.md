@@ -1,5 +1,5 @@
 ---
-name: 'Feature request 🚀'
+name: '🚀 Feature request'
 about: 'I have a suggestion!'
 ---
 
