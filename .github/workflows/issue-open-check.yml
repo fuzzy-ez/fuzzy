@@ -5,15 +5,15 @@ on:
     types: [opened]
 
 jobs:
-  issue-open-check:
+  check-issue:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions-cool/check-user-permission@v2
-        id: checkUser
-        with:
-          require: 'write'
-      - name: check invalid
-        if: (contains(github.event.issue.body, '🚀') == false) && (steps.checkUser.outputs.require-result == 'false')
+      - uses: actions-cool/check-issue-ref@v1
+        id: check
+      - run: echo opened by ${{ steps.check.outputs.result }}
+
+      - name: check format
+        if: (contains(github.event.issue.body, 'issue-helper') == false && steps.check.outputs.result == 0)
         uses: actions-cool/issues-helper@v3
         with:
           actions: 'create-comment,add-labels,close-issue'
@@ -21,5 +21,5 @@ jobs:
           labels: 'invalid'
           body: |
             Hello @${{ github.event.issue.user.login }}, your issue has been closed because it does not conform to our issue requirements.
-
+            
             你好 @${{ github.event.issue.user.login }}，为了能够进行高效沟通，我们对 issue 有一定的格式要求，你的 issue 因为不符合要求而被自动关闭。
