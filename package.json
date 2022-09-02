@@ -14,6 +14,8 @@
     "cz": "git add . && czg",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
+    "docs": "pnpm -C docs run dev",
+    "play": "pnpm -C playground run dev",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0",
     "lint:fix": "eslint --fix . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json",
     "prepare": "husky install"
@@ -36,7 +38,6 @@
     "rimraf": "^3.0.2",
     "sass": "^1.54.4",
     "tsx": "^3.8.2",
-    "turbo": "^1.4.3",
     "typescript": "^4.7.4",
     "vitest": "^0.21.1",
     "vue": "^3.2.37",
