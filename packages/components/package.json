@@ -1,0 +1,29 @@
+{
+  "name": "@fuzzy/components",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "components",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "require": "./dist/components.umd.cjs",
+      "import": "./dist/components.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "main": "./dist/components.umd.cjs",
+  "module": "./dist/components.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "stub": "vite build --watch"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

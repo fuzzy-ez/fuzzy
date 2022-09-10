@@ -9,7 +9,7 @@
 ### use
 
 ```bash
-ni @fuzzy-ui
+ni fuzzy-ui
 ```
 
 if you are interested in this , welcome `pr`
