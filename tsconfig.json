@@ -17,9 +17,6 @@
   },
   "exclude": [
     "**/dist/**",
-    "**/node_modules/**",
-    "**/test/dts/**",
-    "**/playground/**",
-    "**/packages/components/**"
+    "**/node_modules/**"
   ]
 }

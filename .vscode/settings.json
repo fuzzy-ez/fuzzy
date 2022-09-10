@@ -1,37 +1,6 @@
 {
   "prettier.enable": false,
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "npm.packageManager": "pnpm",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "eslint.probe": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "html",
-    "vue",
-    "markdown",
-    "json",
-    "jsonc"
-  ],
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "html",
-    "vue",
-    "markdown",
-    "json",
-    "jsonc"
-  ],
-  "vite.devCommand": "pnpm run dev -- --",
-  "i18n-ally.localesPaths": "packages/locale/lang",
-  "i18n-ally.enabledParsers": ["ts"],
-  "i18n-ally.enabledFrameworks": ["vue", "vue-sfc"],
-  "i18n-ally.keystyle": "nested",
-  "iconify.includes": ["ep"],
-  "unocss.root": "./docs"
 }
