@@ -1,8 +1,15 @@
-## 暂时空着的README
+## fuzzy
 
-![](https://github.com/yezihack/e/workflows/Go/badge.svg)
+>  record a ui start from scratch, 
+>  and learn some new things , 
+>  write some code ,  
+>  make some notes , 
+>  do something cool
 
+### use
 
-TODO
+```bash
+ni fuzzy-ui
+```
 
-- [ ] issue template
+if you are interested in this , welcome `pr`

@@ -12,7 +12,7 @@ about: 'I have a suggestion!'
 ### Examples:
 
 ```js
-
+test
 ```
 
 ### Programme:

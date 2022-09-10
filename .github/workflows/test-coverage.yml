@@ -16,7 +16,7 @@ jobs:
         node-version: ['16']
         include:
           - node-version: '16'
-            node-name: 'Latest'
+            node-name: Latest
     steps:
       - uses: actions/checkout@v3
         with:
@@ -30,7 +30,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
+          cache: pnpm
 
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
