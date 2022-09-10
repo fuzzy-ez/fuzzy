@@ -10,8 +10,8 @@
   "scripts": {
     "start": "pnpm run dev",
     "dev": "",
-    "lint": "eslint \"{src,build,scripts,demo}/**/*.{ts,tsx,js,vue,md}\"",
-    "lint:fix": "eslint --fix \"{src,build,scripts,demo}/**/*.{ts,tsx,js,vue,md}\""
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
   },
   "peerDependencies": {
     "vue": "^3.2.0"
