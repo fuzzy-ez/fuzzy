@@ -15,6 +15,9 @@ export default defineConfig({
     transformMode: {
       web: [/\.[jt]sx$/],
     },
+    coverage: {
+      provider: 'c8',
+    },
   },
   resolve: {
     alias: {

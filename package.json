@@ -28,6 +28,7 @@
     "@pity/eslint-config": "^0.1.9",
     "@types/node": "^18.7.13",
     "@vitejs/plugin-vue-jsx": "^2.0.1",
+    "@vitest/coverage-c8": "^0.23.2",
     "@vueuse/core": "^9.1.1",
     "bumpp": "^8.2.1",
     "eslint": "8.22.0",
