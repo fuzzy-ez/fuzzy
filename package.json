@@ -9,9 +9,12 @@
   },
   "scripts": {
     "start": "pnpm run dev",
-    "dev": "",
+    "dev": "pnpm -r --parallel run stub",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "clean": "rimraf dist && pnpm -r --parallel clean"
   },
   "peerDependencies": {
     "vue": "^3.2.0"
@@ -21,11 +24,13 @@
     "@iconify-json/fluent-emoji": "^1.1.0",
     "@pity/eslint-config": "^0.1.9",
     "@types/node": "^18.7.13",
+    "@vitejs/plugin-vue-jsx": "^2.0.1",
     "@vueuse/core": "^9.1.1",
     "bumpp": "^8.2.1",
     "eslint": "8.22.0",
     "esno": "^0.16.3",
     "husky": "^8.0.1",
+    "jsdom": "^20.0.0",
     "lint-staged": "^13.0.3",
     "rimraf": "^3.0.2",
     "tsup": "^6.2.1",
