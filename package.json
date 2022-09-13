@@ -13,7 +13,6 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "test": "vitest",
-    "test:coverage": "vitest --coverage",
     "clean": "rimraf dist && pnpm -r --parallel clean",
     "play": "pnpm -C playground run dev"
   },
