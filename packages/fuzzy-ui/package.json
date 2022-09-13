@@ -4,11 +4,25 @@
   "description": "",
   "author": "",
   "license": "MIT",
-  "main": "index.js",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "tsup",
+    "stub": "tsup --watch"
+  },
   "peerDependencies": {
     "vue": "^3.2.0"
   },

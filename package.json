@@ -14,12 +14,15 @@
     "lint:fix": "eslint --fix .",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
-    "clean": "rimraf dist && pnpm -r --parallel clean"
+    "clean": "rimraf dist && pnpm -r --parallel clean",
+    "play": "pnpm -C playground run dev"
   },
   "peerDependencies": {
     "vue": "^3.2.0"
   },
   "devDependencies": {
+    "@fuzzy/components": "workspace:*",
+    "@fuzzy/utils": "workspace:*",
     "@iconify-json/carbon": "^1.1.5",
     "@iconify-json/fluent-emoji": "^1.1.0",
     "@pity/eslint-config": "^0.1.9",
@@ -29,15 +32,19 @@
     "bumpp": "^8.2.1",
     "eslint": "8.22.0",
     "esno": "^0.16.3",
+    "fuzzy-ui": "workspace:*",
     "husky": "^8.0.1",
+    "i": "^0.3.7",
     "jsdom": "^20.0.0",
     "lint-staged": "^13.0.3",
+    "npm": "^8.19.1",
     "rimraf": "^3.0.2",
     "tsup": "^6.2.1",
     "typescript": "^4.7.4",
     "unocss": "^0.45.12",
     "unplugin-auto-import": "0.11.2",
     "unplugin-vue-components": "0.22.4",
+    "unplugin-vue-macros": "^0.11.2",
     "vite": "^3.0.9",
     "vitepress": "1.0.0-alpha.13",
     "vitest": "0.22.1",
