@@ -4,8 +4,25 @@
   "description": "",
   "author": "",
   "license": "MIT",
-  "main": "index.js",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsup",
+    "stub": "tsup --watch"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.0"
   }
 }
