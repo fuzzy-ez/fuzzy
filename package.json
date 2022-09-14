@@ -33,7 +33,6 @@
     "esno": "^0.16.3",
     "fuzzy-ui": "workspace:*",
     "husky": "^8.0.1",
-    "i": "^0.3.7",
     "jsdom": "^20.0.0",
     "lint-staged": "^13.0.3",
     "npm": "^8.19.1",
