@@ -17,7 +17,6 @@ importers:
       esno: ^0.16.3
       fuzzy-ui: workspace:*
       husky: ^8.0.1
-      i: ^0.3.7
       jsdom: ^20.0.0
       lint-staged: ^13.0.3
       npm: ^8.19.1
@@ -46,7 +45,6 @@ importers:
       esno: 0.16.3
       fuzzy-ui: link:packages/fuzzy-ui
       husky: 8.0.1
-      i: 0.3.7
       jsdom: 20.0.0
       lint-staged: 13.0.3
       npm: 8.19.1
@@ -3309,11 +3307,6 @@ packages:
     resolution: {integrity: sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==}
     engines: {node: '>=14'}
     hasBin: true
-    dev: true
-
-  /i/0.3.7:
-    resolution: {integrity: sha512-FYz4wlXgkQwIPqhzC5TdNMLSE5+GS1IIDJZY/1ZiEPCT2S3COUVZeT5OW4BmW4r5LHLQuOosSwsvnroG9GR59Q==}
-    engines: {node: '>=0.4'}
     dev: true
 
   /iconv-lite/0.6.3:
