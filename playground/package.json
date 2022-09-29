@@ -9,7 +9,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@unocss/reset": "0.45.22",
+    "@unocss/reset": "0.45.26",
     "vue-router": "4.1.5"
   },
   "devDependencies": {
