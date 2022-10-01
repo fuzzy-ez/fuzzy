@@ -23,7 +23,7 @@
     "@fuzzy/components": "workspace:*",
     "@fuzzy/utils": "workspace:*",
     "@iconify-json/carbon": "1.1.8",
-    "@iconify-json/fluent-emoji": "1.1.1",
+    "@iconify-json/fluent-emoji": "1.1.2",
     "@pity/eslint-config": "0.1.9",
     "@types/node": "18.7.18",
     "@vitejs/plugin-vue-jsx": "2.0.1",
