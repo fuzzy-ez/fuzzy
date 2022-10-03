@@ -2,7 +2,7 @@
   "name": "@fuzzy/monorepo",
   "version": "0.0.1",
   "private": true,
-  "packageManager": "pnpm@7.11.0",
+  "packageManager": "pnpm@7.13.0",
   "license": "MIT",
   "engines": {
     "node": ">= 16"
