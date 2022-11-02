@@ -4,8 +4,17 @@
   "description": "cli",
   "author": "",
   "license": "MIT",
-  "main": "index.js",
+  "main": "./lib/bin.js",
+  "module": "./lib/bin.js",
+  "bin": {
+    "fuzzy-cli": "./lib/bin.js"
+  },
+  "files": [
+    "lib"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "create": "fuzzy-cli create -n icons -u"
   }
 }

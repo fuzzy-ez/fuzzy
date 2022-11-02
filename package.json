@@ -23,6 +23,7 @@
     "fs-extra": "^10.1.0"
   },
   "devDependencies": {
+    "@fuzzy/cli": "workspace:*",
     "@fuzzy/components": "workspace:*",
     "@fuzzy/icons": "workspace:*",
     "@fuzzy/utils": "workspace:*",

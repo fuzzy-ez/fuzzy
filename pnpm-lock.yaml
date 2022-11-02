@@ -4,6 +4,7 @@ importers:
 
   .:
     specifiers:
+      '@fuzzy/cli': workspace:*
       '@fuzzy/components': workspace:*
       '@fuzzy/icons': workspace:*
       '@fuzzy/utils': workspace:*
@@ -38,6 +39,7 @@ importers:
     dependencies:
       fs-extra: 10.1.0
     devDependencies:
+      '@fuzzy/cli': link:packages/cli
       '@fuzzy/components': link:packages/components
       '@fuzzy/icons': link:packages/icons
       '@fuzzy/utils': link:packages/utils
