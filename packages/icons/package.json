@@ -1,0 +1,21 @@
+{
+  "name": "@fuzzy/icons",
+  "version": "0.0.1",
+  "description": "",
+  "author": "priority",
+  "license": "MIT",
+  "main": "index.js",
+  "bin": {
+    "fuzzy-icons": "./bin/index.js"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "scripts": {
+    "build": "tsc ./bin/index.ts && fuzzy-icons build"
+  },
+  "dependencies": {
+    "webfont": "9.0.0"
+  }
+}
