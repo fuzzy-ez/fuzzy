@@ -4,8 +4,23 @@
   "description": "cli",
   "author": "",
   "license": "MIT",
-  "main": "index.js",
+  "keywords": [
+    "fuzzy",
+    "cli"
+  ],
+  "main": "./lib/index.js",
+  "module": "./lib/index.js",
+  "bin": {
+    "fuzzy-cli": "./lib/bin.js"
+  },
+  "files": [
+    "lib"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "cac": "^6.7.14"
   }
 }
