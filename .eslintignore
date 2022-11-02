@@ -11,3 +11,5 @@ docs/.vitepress/crowdin/*
 !docs/.vitepress/crowdin/en-US
 !.*
 .eslintrc
+
+**/*.js

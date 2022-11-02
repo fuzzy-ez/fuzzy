@@ -19,3 +19,5 @@ cypress/screenshots/*
 cypress/videos/*
 tmp
 
+.eslintcache
+

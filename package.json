@@ -10,8 +10,8 @@
   "scripts": {
     "start": "pnpm run dev",
     "dev": "pnpm -r --parallel run stub",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
+    "lint": "eslint . --cache",
+    "lint:fix": "pnpm run lint --fix",
     "test": "vitest",
     "clean": "rimraf dist && pnpm -r --parallel clean",
     "play": "pnpm -C playground run dev"
@@ -19,16 +19,22 @@
   "peerDependencies": {
     "vue": "^3.2.0"
   },
+  "dependencies": {
+    "fs-extra": "^10.1.0"
+  },
   "devDependencies": {
     "@fuzzy/components": "workspace:*",
+    "@fuzzy/icons": "workspace:*",
     "@fuzzy/utils": "workspace:*",
     "@iconify-json/carbon": "1.1.8",
     "@iconify-json/fluent-emoji": "1.1.2",
     "@pity/eslint-config": "0.1.9",
+    "@types/fs-extra": "^9.0.13",
     "@types/node": "18.7.18",
     "@vitejs/plugin-vue-jsx": "2.0.1",
     "@vueuse/core": "9.2.0",
     "bumpp": "8.2.1",
+    "cac": "^6.7.14",
     "eslint": "8.24.0",
     "esno": "0.16.3",
     "fuzzy-ui": "workspace:*",
