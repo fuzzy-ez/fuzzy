@@ -10,8 +10,8 @@
   "scripts": {
     "start": "pnpm run dev",
     "dev": "pnpm -r --parallel run stub",
-    "lint": "eslint . --cache",
-    "lint:fix": "pnpm run lint --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "test": "vitest",
     "clean": "rimraf dist && pnpm -r --parallel clean",
     "play": "pnpm -C playground run dev"
@@ -55,7 +55,7 @@
   ],
   "lint-staged": {
     "*.{js,ts,tsx,vue,md}": [
-      "eslint . --fix"
+      "eslint --fix"
     ]
   }
 }
