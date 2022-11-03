@@ -10,7 +10,7 @@ cli
   .command('create', 'Create a component directory')
   .option('-n , --name <componentsName>', 'Component name')
   .option('-t , --tsx', 'Generate files in tsx format')
-  .option('-u , --vue', 'Generate files in vue3 format')
+  .option('-f , --sfc', 'Generate files in vue3 format')
   .action(create)
 
 cli.version(version)

@@ -1,16 +1,15 @@
 import { resolve } from 'path'
 import Vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
-import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import VueMacros from 'unplugin-vue-macros/vite'
 import VueJsx from '@vitejs/plugin-vue-jsx'
+import DefineOptions from 'unplugin-vue-define-options/vite'
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'index.ts'),
-      name: '@onu-ui/components',
+      name: '@fuzzy/components',
     },
     rollupOptions: {
       external: ['vue'],
@@ -22,13 +21,9 @@ export default defineConfig({
     },
   },
   plugins: [
-    VueMacros({
-      plugins: {
-        vue: Vue(),
-        vueJsx: VueJsx(),
-      },
-    }),
-    UnoCSS(),
+    Vue(),
+    VueJsx(),
+    DefineOptions(),
     AutoImport({
       imports: ['vue', '@vueuse/core'],
       dts: 'auto-imports.d.ts',

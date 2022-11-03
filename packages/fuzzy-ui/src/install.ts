@@ -1,5 +1,5 @@
 import type { App, Plugin } from '@vue/runtime-core'
-import { version as ver } from './package.json'
+import { version } from '../package.json'
 export const INSTALL_KEY = Symbol('INSTALL_KEY')
 
 export const makeInstaller = (components: Plugin[] = []) => {
@@ -14,6 +14,6 @@ export const makeInstaller = (components: Plugin[] = []) => {
 
   return {
     install,
-    version: ver,
+    version,
   }
 }

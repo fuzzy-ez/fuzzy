@@ -13,13 +13,17 @@
     "skipLibCheck": true,
     "jsx": "preserve",
     "types": ["node", "vite/client"],
-    "paths": {}
+    "paths": {
+      "fuzzy-ui": ["./packages/fuzzy-ui/src/index.ts"],
+      "@fuzzy-ui/components": ["./packages/components/index.ts"],
+      "@fuzzy-ui/utils": ["./packages/utils/index.ts"],
+      "@fuzzy-ui/cli": ["./packages/cli/src/index.ts"]
+    }
   },
-  "include": [
-    "packages"
-  ],
   "exclude": [
     "**/dist/**",
-    "**/node_modules/**"
+    "**/node_modules/**",
+    "**/playground/**",
+    "**/packages/components/**"
   ]
 }
