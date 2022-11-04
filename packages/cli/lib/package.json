@@ -1,27 +1,27 @@
 {
-    "name": "@fuzzy/cli",
-    "version": "0.0.1",
-    "description": "cli",
-    "author": "priority",
-    "license": "MIT",
-    "main": "./lib/src/bin.js",
-    "module": "./lib/src/bin.js",
-    "bin": {
-        "fuzzy-cli": "./lib/src/bin.js"
-    },
-    "files": [
-        "lib"
-    ],
-    "scripts": {
-        "dev": "tsc --watch",
-        "build": "rimraf lib && tsc",
-        "create": "fuzzy-cli create"
-    },
-    "dependencies": {
-        "cac": "^6.7.14",
-        "inquirer": "^8.2.5"
-    },
-    "devDependencies": {
-        "@types/inquirer": "^9.0.2"
-    }
+  "name": "@fuzzy/cli",
+  "version": "0.0.1",
+  "description": "cli",
+  "author": "priority",
+  "license": "MIT",
+  "main": "./lib/src/bin.js",
+  "module": "./lib/src/bin.js",
+  "bin": {
+    "fuzzy-cli": "./lib/src/bin.js"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "rimraf lib && tsc",
+    "create": "fuzzy-cli create"
+  },
+  "dependencies": {
+    "cac": "^6.7.14",
+    "inquirer": "^8.2.5"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.2"
+  }
 }

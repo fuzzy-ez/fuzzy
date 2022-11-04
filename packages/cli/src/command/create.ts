@@ -1,4 +1,3 @@
-/* eslint-disable no-template-curly-in-string */
 import { resolve } from 'path'
 import inquirer from 'inquirer'
 
