@@ -1,4 +1,4 @@
-#!/usr/bin/env ts-node
+#!/usr/bin/env node
 
 import cac from 'cac'
 import { version } from '../package.json'

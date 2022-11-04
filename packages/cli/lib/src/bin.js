@@ -1,4 +1,4 @@
-#!/usr/bin/env ts-node
+#!/usr/bin/env node
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -12,7 +12,7 @@ cli
     .command('create', 'Create a component directory')
     .option('-n , --name <componentsName>', 'Component name')
     .option('-t , --tsx', 'Generate files in tsx format')
-    .option('-u , --vue', 'Generate files in vue3 format')
+    .option('-f , --sfc', 'Generate files in vue3 format')
     .action(command_1.create);
 cli.version(package_json_1.version);
 cli.help();

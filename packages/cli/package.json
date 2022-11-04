@@ -4,22 +4,21 @@
   "description": "cli",
   "author": "priority",
   "license": "MIT",
-  "main": "./lib/bin.js",
-  "module": "./lib/bin.js",
+  "main": "./lib/src/bin.js",
+  "module": "./lib/src/bin.js",
   "bin": {
-    "fuzzy-cli": "./lib/bin.js"
+    "fuzzy-cli": "./lib/src/bin.js"
   },
   "files": [
     "lib"
   ],
   "scripts": {
     "dev": "tsc --watch",
-    "build": "tsc",
-    "create": "fuzzy-cli create -n icons -u"
+    "build": "rimraf lib && tsc"
   },
   "dependencies": {
-    "inquirer": "^8.2.5",
-    "ora": "^6.1.2"
+    "cac": "^6.7.14",
+    "inquirer": "^8.2.5"
   },
   "devDependencies": {
     "@types/inquirer": "^9.0.2"

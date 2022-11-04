@@ -1,7 +1,15 @@
+declare type CodingStyle = 'ts' | 'vue';
 interface CreateOptions {
     name?: string;
-    tsx?: boolean;
-    vue?: boolean;
+    ts?: boolean;
+    sfc?: boolean;
 }
-export declare function create(options: CreateOptions): void;
+interface RenderData {
+    kebabCaseName: string;
+    bigCamelizeName: string;
+    camelizeName: string;
+    style: CodingStyle;
+}
+export declare function create(options: CreateOptions): Promise<void>;
+export declare function renderTemplates(componentFolder: string, componentFolderName: string, renderData: RenderData): Promise<void>;
 export {};

@@ -1,15 +1,17 @@
 {
   "compilerOptions": {
     "outDir": "./lib",
-    "target": "es5",
+    "target": "ES5",
     "strict": true,
-    "downlevelIteration": true,
+    "module": "CommonJS",
     "declaration": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "jsx": "preserve",
     "lib": ["esnext", "dom"]
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "lib"]
 }

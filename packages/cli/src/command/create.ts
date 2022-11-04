@@ -1,24 +1,23 @@
+/* eslint-disable no-template-curly-in-string */
 import { resolve } from 'path'
 import inquirer from 'inquirer'
 
-import { copySync, pathExistsSync, removeSync } from 'fs-extra'
 import {
-  failPrompt,
-  spinnerStart,
-  successPrompt,
-  warnPrompt,
-} from '../helper/spinner'
-
+  ensureFile,
+  pathExistsSync,
+  writeFile,
+} from 'fs-extra'
+import pc from 'picocolors'
 import {
-  SRC_DIR,
+  CWD,
 } from '../helper/constant'
+import { bigCamelize, camelize, kebabCase } from '../helper/utils'
 const { prompt } = inquirer
-
-type CodingStyle = 'tsx' | 'vue'
+type CodingStyle = 'ts' | 'vue'
 
 interface CreateOptions {
   name?: string
-  tsx?: boolean
+  ts?: boolean
   sfc?: boolean
 }
 
@@ -30,7 +29,6 @@ interface RenderData {
 }
 
 export async function create(options: CreateOptions) {
-  // const { name, tsx, vue } = options
   // eslint-disable-next-line no-console
   console.log('\n📦📦 Create a component ! \n')
 
@@ -48,14 +46,22 @@ export async function create(options: CreateOptions) {
       default: renderData.kebabCaseName,
     })
 
-  const componentFolder = resolve(SRC_DIR, renderData.kebabCaseName)
-  const componentFolderName = renderData.kebabCaseName
+  renderData.kebabCaseName = kebabCase(name)
+  renderData.camelizeName = camelize(name)
+  renderData.bigCamelizeName = bigCamelize(name)
 
-  if (pathExistsSync(componentFolder))
-    failPrompt(`\n❌❌ The component ${componentFolderName} already exists! \n`)
+  const componentFolder = resolve(CWD, renderData.camelizeName)
+  const componentFolderName = renderData.camelizeName
 
-  if (options.sfc || options.tsx) {
-    renderData.style = options.sfc ? 'vue' : 'tsx'
+  if (pathExistsSync(componentFolder)) {
+    // eslint-disable-next-line no-console
+    console.log(pc.red(`\n❌❌ The component ${pc.bgYellow(componentFolderName)} already exists! \n`))
+
+    return
+  }
+
+  if (options.sfc || options.ts) {
+    renderData.style = options.sfc ? 'vue' : 'ts'
   }
   else {
     const { style } = await prompt({
@@ -64,27 +70,16 @@ export async function create(options: CreateOptions) {
       message: 'Which style do you use to write your component ?',
       choices: [
         { name: 'sfc', value: 'vue' },
-        { name: 'tsx', value: 'tsx' },
+        { name: 'ts', value: 'ts' },
       ],
       default: 'vue',
     })
     renderData.style = style
   }
 
-  copySync(resolve(__dirname, '../../template/create'), componentFolder)
-
   await renderTemplates(componentFolder, componentFolderName, renderData)
-
-  if (!renderData.locale)
-    removeSync(resolve(componentFolder, '/example/locale'))
-
-  if (renderData.style !== 'vue')
-    removeSync(resolve(componentFolder, `${renderData.bigCamelizeName}.vue`))
-
-  if (renderData.style !== 'tsx')
-    removeSync(resolve(componentFolder, `${renderData.bigCamelizeName}.tsx`))
-
-  successPrompt(`Create ${componentFolderName} component success!`)
+  // eslint-disable-next-line no-console
+  console.log(pc.green('\n✅✅ Create component succeed! \n'))
 }
 
 export async function renderTemplates(
@@ -94,18 +89,57 @@ export async function renderTemplates(
   const {
     kebabCaseName,
     bigCamelizeName,
-    camelizeName,
     style,
   } = renderData
 
-  const code = `
-    <script setup>
-    defineOptions({
-      name: '${kebabCaseName}',
-    })
-    </script>
+  const codeSfc
+  = `<script setup lang="ts">
+defineOptions({
+  name: 'F${bigCamelizeName}',
+})
+</script>
 
-    <template>
-    </template>
-  `
+<template>
+  <div class="${kebabCaseName}">
+    <slot />
+  </div>
+</template>
+
+<style scoped lang="scss">
+</style>`
+  const codeTs
+  = `const props = {}
+export default defineComponent({
+  name: 'F${bigCamelizeName}',
+  props,
+  setup(){
+    return {}
+  },
+  render(){
+    const {
+      $slots:slots,
+    } = this
+    return h('div', { class: F'${bigCamelizeName}' }, slots)
+  }
+})`
+  const codeIndex
+= `import { withInstall } from '@fuzzy/utils'
+import ${bigCamelizeName} from './src/${componentFolderName}.${style}'
+
+export const F${bigCamelizeName} = withInstall(${bigCamelizeName})
+
+export default F${bigCamelizeName}`
+
+  await Promise.all([
+    ensureFile(`${componentFolder}/src/${componentFolderName}.${style}`),
+    ensureFile(`${componentFolder}/style/index.scss`),
+    ensureFile(`${componentFolder}/props.ts`),
+    ensureFile(`${componentFolder}/index.ts`),
+    ensureFile(`${componentFolder}/__test__/index.spec.ts`),
+  ])
+  await Promise.all([
+    writeFile(resolve(`${componentFolder}/src`, `${componentFolderName}.${style}`), style === 'vue' ? codeSfc : codeTs),
+    writeFile(resolve(componentFolder, 'props.ts'), ''),
+    writeFile(resolve(componentFolder, 'index.ts'), codeIndex),
+  ])
 }
