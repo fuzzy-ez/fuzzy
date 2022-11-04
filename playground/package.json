@@ -1,6 +1,5 @@
 {
   "name": "playground",
-  "type": "module",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -10,11 +9,9 @@
   },
   "dependencies": {
     "@unocss/reset": "0.45.22",
-    "vue-router": "4.1.5"
+    "fuzzy-ui": "workspace:*"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "3.1.0",
-    "vite-plugin-pages": "0.26.0",
-    "vite-plugin-vue-layouts": "0.7.0"
+    "@vitejs/plugin-vue": "3.1.0"
   }
 }

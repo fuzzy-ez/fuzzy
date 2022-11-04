@@ -25,5 +25,9 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "@fuzzy/utils": "workspace:*",
+    "unplugin-vue-define-options": "^0.12.6"
   }
 }

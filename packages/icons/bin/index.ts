@@ -29,6 +29,7 @@ async function build() {
 
   removeSync(DIST_DIR)
 
+  // create
   await Promise.all([ensureDir(FONTS_DIR), ensureDir(CSS_DIR)])
 
   const icons = readdirSync(SVG_DIR).map((svgName) => {

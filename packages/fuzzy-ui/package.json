@@ -1,8 +1,9 @@
 {
   "name": "fuzzy-ui",
+  "type": "module",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "priority",
   "license": "MIT",
   "exports": {
     ".": {
