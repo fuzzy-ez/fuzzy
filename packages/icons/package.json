@@ -13,7 +13,7 @@
     "bin"
   ],
   "scripts": {
-    "build": "tsc ./bin/index.ts && fuzzy-icons build"
+    "build": "tsc && fuzzy-icons build"
   },
   "dependencies": {
     "webfont": "9.0.0"
