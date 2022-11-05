@@ -14,6 +14,7 @@ const FONTS_DIR = (0, path_1.resolve)(DIST_DIR, 'fonts');
 const CSS_DIR = (0, path_1.resolve)(DIST_DIR, 'css');
 const cli = (0, cac_1.default)();
 const DEFAULT_NAME = 'fuzzy-icons';
+const NAMESPACE = 'fu-icon';
 const CONFIG = {
     fontWeight: 'normal',
     fontStyle: 'normal',
@@ -66,8 +67,8 @@ ${iconNames.join(',\n')}
   font-style: ${CONFIG.fontStyle};
 }
 
-.${DEFAULT_NAME}--set,
-.${DEFAULT_NAME}--set::before {
+.${NAMESPACE}--set,
+.${NAMESPACE}--set::before {
   position: relative;
   display: inline-block;
   font: normal normal normal 14px/1 "${DEFAULT_NAME}";
@@ -78,7 +79,7 @@ ${iconNames.join(',\n')}
 
 ${icons
         .map((icon) => {
-        return `.${DEFAULT_NAME}-${icon.name}::before {
+        return `.${NAMESPACE}-${icon.name}::before {
   content: "\\${icon.pointCode}";
 }`;
     })
