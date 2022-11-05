@@ -1,2 +1,2 @@
 // export * from './***';
-export * from './src/button/index'
+export * from './button/index'

@@ -18,7 +18,8 @@
   ],
   "scripts": {
     "build": "vite build",
-    "stub": "vite build --watch"
+    "stub": "vite build --watch",
+    "create": "fuzzy-cli create"
   },
   "peerDependencies": {
     "vue": "^3.2.0"
