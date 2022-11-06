@@ -1,7 +1,6 @@
 import { resolve } from 'path'
 import Vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
-import AutoImport from 'unplugin-auto-import/vite'
 import VueJsx from '@vitejs/plugin-vue-jsx'
 import DefineOptions from 'unplugin-vue-define-options/vite'
 // https://vitejs.dev/config/
@@ -24,9 +23,5 @@ export default defineConfig({
     Vue(),
     VueJsx(),
     DefineOptions(),
-    AutoImport({
-      imports: ['vue', '@vueuse/core'],
-      dts: 'auto-imports.d.ts',
-    }),
   ],
 })

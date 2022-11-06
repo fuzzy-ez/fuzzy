@@ -14,6 +14,7 @@ importers:
       '@types/fs-extra': ^9.0.13
       '@types/node': 18.7.18
       '@vitejs/plugin-vue-jsx': 2.0.1
+      '@vue/test-utils': ^2.2.1
       '@vueuse/core': 9.2.0
       bumpp: 8.2.1
       eslint: 8.24.0
@@ -46,6 +47,7 @@ importers:
       '@types/fs-extra': 9.0.13
       '@types/node': 18.7.18
       '@vitejs/plugin-vue-jsx': 2.0.1_vite@3.1.4+vue@3.2.39
+      '@vue/test-utils': 2.2.1_vue@3.2.39
       '@vueuse/core': 9.2.0_vue@3.2.39
       bumpp: 8.2.1
       eslint: 8.24.0
@@ -1430,6 +1432,14 @@ packages:
 
   /@vue/shared/3.2.41:
     resolution: {integrity: sha512-W9mfWLHmJhkfAmV+7gDjcHeAWALQtgGT3JErxULl0oz6R6+3ug91I7IErs93eCFhPCZPHBs4QJS7YWEV7A3sxw==}
+    dev: true
+
+  /@vue/test-utils/2.2.1_vue@3.2.39:
+    resolution: {integrity: sha512-AkLt24wnnxedJ3NX090JYiueog184QqlR5TVNZM+lggCrK8XjeuPr274okaLqDmiRgp4XVCaGa07KqKLGQbsMQ==}
+    peerDependencies:
+      vue: ^3.0.1
+    dependencies:
+      vue: 3.2.39
     dev: true
 
   /@vueuse/core/9.2.0_vue@3.2.39:
