@@ -10,9 +10,6 @@ export const iconProps = {
   color: {
     type: String,
   },
-  onClick: {
-    type: Function as PropType<(event: Event) => void>,
-  },
 }
 
 export type FIconProps = ExtractPropTypes<typeof iconProps>
