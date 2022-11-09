@@ -14,7 +14,8 @@
   ],
   "scripts": {
     "dev": "tsc --watch",
-    "build": "rimraf lib && tsc"
+    "build": "rimraf lib && tsc && pnpm run --filter \"../icons\" build",
+    "clean": "rimraf dist"
   },
   "dependencies": {
     "cac": "^6.7.14",

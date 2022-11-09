@@ -22,7 +22,8 @@
   },
   "scripts": {
     "build": "tsup",
-    "stub": "tsup --watch"
+    "stub": "tsup --watch",
+    "clean": "rimraf dist"
   },
   "peerDependencies": {
     "vue": "^3.2.0"

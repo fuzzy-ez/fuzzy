@@ -13,7 +13,8 @@
     "bin"
   ],
   "scripts": {
-    "build": "tsc && fuzzy-icons build"
+    "build": "tsc && fuzzy-icons build",
+    "clean": "rimraf dist"
   },
   "dependencies": {
     "webfont": "9.0.0"

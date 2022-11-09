@@ -19,10 +19,14 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
-    "stub": "tsup --watch"
+    "build": "tsup && pnpm run --filter \"../components\" build",
+    "stub": "tsup --watch",
+    "clean": "rimraf dist"
   },
   "peerDependencies": {
     "vue": "^3.2.0"
+  },
+  "devDependencies": {
+    "tsup": "6.2.3"
   }
 }
