@@ -40,7 +40,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.renderTemplates = exports.create = void 0;
-/* eslint-disable no-template-curly-in-string */
 var path_1 = require("path");
 var inquirer_1 = __importDefault(require("inquirer"));
 var fs_extra_1 = require("fs-extra");
