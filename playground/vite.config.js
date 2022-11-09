@@ -9,13 +9,14 @@ export default defineConfig({
   plugins: [
     vue(),
     AutoImport({
-      imports: ['vue'],
+      imports: ['vue','@vueuse/core'],
       vueTemplate: true,
       dts: 'src/auto-imports.d.ts',
+      dirs: ['./src/composables']
     }),
     Components({
       resolvers: [FuzzyResolver()],
-      dts: 'src/components.d.ts',
+      dts: './src/components.d.ts',
     }),
   ],
   resolve: {
