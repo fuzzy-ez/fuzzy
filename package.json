@@ -14,7 +14,7 @@
     "lint:fix": "pnpm run lint --fix",
     "test": "vitest",
     "clean": "pnpm -r --parallel clean",
-    "build": "pnpm -r --parallel -F \"./packages/{cli,utils}\" run build",
+    "build": "pnpm -r --parallel -F \"./packages/cli\" run build",
     "play": "pnpm -C playground run dev"
   },
   "peerDependencies": {

@@ -13,7 +13,7 @@
     "bin"
   ],
   "scripts": {
-    "build": "tsc && fuzzy-icons build",
+    "build": "tsc && fuzzy-icons build && pnpm run --filter \"../utils\" build",
     "clean": "rimraf dist"
   },
   "dependencies": {
