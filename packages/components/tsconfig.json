@@ -4,5 +4,5 @@
     "types": ["unplugin-vue-define-options/macros-global"]
   },
   "exclude": ["**/dist/**"],
-  "include": ["**/*.ts", "**/*.d.ts", "**/*.vue"]
+  "include": ["**/*.ts", "**/*.d.ts", "**/*.vue", "icon/__test__/index.spec.tsx"]
 }

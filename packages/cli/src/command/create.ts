@@ -129,16 +129,27 @@ export const F${bigCamelizeName} = withInstall(${bigCamelizeName})
 
 export default F${bigCamelizeName}`
 
+  const codeTest
+= `import { mount } from '@vue/test-utils'
+import {describe, test, expect} from '@jest/globals'
+
+describe('${bigCamelizeName} test', () => {
+  it('basic test',() => {
+
+  })
+})
+`
   await Promise.all([
     ensureFile(`${componentFolder}/src/${componentFolderName}.${style}`),
     ensureFile(`${componentFolder}/style/index.scss`),
     ensureFile(`${componentFolder}/props.ts`),
     ensureFile(`${componentFolder}/index.ts`),
-    ensureFile(`${componentFolder}/__test__/index.spec.ts`),
+    ensureFile(`${componentFolder}/__test__/index.spec.tsx`),
   ])
   await Promise.all([
     writeFile(resolve(`${componentFolder}/src`, `${componentFolderName}.${style}`), style === 'vue' ? codeSfc : codeTs),
-    writeFile(resolve(componentFolder, 'props.ts'), ''),
+    // writeFile(resolve(componentFolder, 'props.ts'), ''),
     writeFile(resolve(componentFolder, 'index.ts'), codeIndex),
+    writeFile(resolve(componentFolder, '__test__/index.spec.tsx'), codeTest),
   ])
 }

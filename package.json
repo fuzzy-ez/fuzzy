@@ -14,6 +14,7 @@
     "lint:fix": "pnpm run lint --fix",
     "test": "vitest",
     "clean": "rimraf dist && pnpm -r --parallel clean",
+    "build": "pnpm -r --parallel -F \"./packages/{components,cli,utils,onu-ui}\" run build",
     "play": "pnpm -C playground run dev"
   },
   "peerDependencies": {
@@ -33,6 +34,7 @@
     "@types/fs-extra": "^9.0.13",
     "@types/node": "18.7.18",
     "@vitejs/plugin-vue-jsx": "2.0.1",
+    "@vue/test-utils": "^2.2.1",
     "@vueuse/core": "9.2.0",
     "bumpp": "8.2.1",
     "eslint": "8.24.0",
