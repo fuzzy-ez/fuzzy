@@ -83,19 +83,14 @@ importers:
 
   packages/components:
     specifiers:
-      '@fuzzy/utils': workspace:*
       sass: ^1.56.0
       unplugin-vue-define-options: ^0.12.6
     devDependencies:
-      '@fuzzy/utils': link:../utils
       sass: 1.56.0
       unplugin-vue-define-options: 0.12.6
 
   packages/fuzzy-ui:
-    specifiers:
-      '@fuzzy/components': workspace:*
-    dependencies:
-      '@fuzzy/components': link:../components
+    specifiers: {}
 
   packages/icons:
     specifiers:
@@ -5388,14 +5383,6 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup/2.77.3:
-    resolution: {integrity: sha512-/qxNTG7FbmefJWoeeYJFbHehJ2HNWnjkAFRKzWN/45eNBBF/r8lo992CwcJXEzyVxs5FmfId+vTSTQDb+bxA+g==}
-    engines: {node: '>=10.0.0'}
-    hasBin: true
-    optionalDependencies:
-      fsevents: 2.3.2
-    dev: true
-
   /rollup/2.78.1:
     resolution: {integrity: sha512-VeeCgtGi4P+o9hIg+xz4qQpRl6R401LWEXBmxYKOV4zlF82lyhgh2hTZnheFUbANE8l2A41F458iwj2vEYaXJg==}
     engines: {node: '>=10.0.0'}
@@ -6084,7 +6071,7 @@ packages:
       joycon: 3.1.1
       postcss-load-config: 3.1.4
       resolve-from: 5.0.0
-      rollup: 2.77.3
+      rollup: 2.78.1
       source-map: 0.8.0-beta.0
       sucrase: 3.25.0
       tree-kill: 1.2.2

@@ -27,8 +27,5 @@
   },
   "peerDependencies": {
     "vue": "^3.2.0"
-  },
-  "dependencies": {
-    "@fuzzy/components": "workspace:*"
   }
 }

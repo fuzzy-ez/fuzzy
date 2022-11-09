@@ -29,7 +29,6 @@
     "access": "public"
   },
   "devDependencies": {
-    "@fuzzy/utils": "workspace:*",
     "sass": "^1.56.0",
     "unplugin-vue-define-options": "^0.12.6"
   }
