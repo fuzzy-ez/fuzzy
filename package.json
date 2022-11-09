@@ -13,8 +13,8 @@
     "lint": "eslint . --cache",
     "lint:fix": "pnpm run lint --fix",
     "test": "vitest",
-    "clean": "rimraf dist && pnpm -r --parallel clean",
-    "build": "pnpm -r --parallel -F \"./packages/{components,cli,utils,onu-ui}\" run build",
+    "clean": "pnpm -r --parallel clean",
+    "build": "pnpm -r --parallel -F \"./packages/cli\" run build",
     "play": "pnpm -C playground run dev"
   },
   "peerDependencies": {
@@ -57,7 +57,7 @@
   "workspaces": [
     "packages/*",
     "docs",
-    "play"
+    "playground"
   ],
   "lint-staged": {
     "*.{js,ts,tsx,vue,md}": [

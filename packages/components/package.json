@@ -17,9 +17,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && pnpm run --filter \"../fuzzy-ui\" build",
     "stub": "vite build --watch",
-    "create": "fuzzy-cli create"
+    "create": "fuzzy-cli create",
+    "clean": "rimraf dist"
   },
   "peerDependencies": {
     "vue": "^3.2.0"
@@ -28,7 +29,6 @@
     "access": "public"
   },
   "devDependencies": {
-    "@fuzzy/utils": "workspace:*",
     "sass": "^1.56.0",
     "unplugin-vue-define-options": "^0.12.6"
   }
