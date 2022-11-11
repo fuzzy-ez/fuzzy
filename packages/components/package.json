@@ -13,12 +13,13 @@
   },
   "main": "./dist/components.umd.cjs",
   "module": "./dist/components.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "vite build && pnpm run --filter \"../fuzzy-ui\" build",
-    "stub": "vite build --watch",
+    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly --skipLibCheck && pnpm run --filter \"../fuzzy-ui\" build",
+    "stub": "vite build --watch && vue-tsc --declaration --emitDeclarationOnly --skipLibCheck ",
     "create": "fuzzy-cli create",
     "clean": "rimraf dist"
   },
@@ -29,7 +30,6 @@
     "access": "public"
   },
   "devDependencies": {
-    "sass": "^1.56.0",
     "unplugin-vue-define-options": "^0.12.6"
   }
 }

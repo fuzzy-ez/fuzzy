@@ -20,4 +20,5 @@ cypress/videos/*
 tmp
 
 .eslintcache
+.stylelintcache
 
