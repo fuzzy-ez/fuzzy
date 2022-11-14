@@ -3,6 +3,7 @@ import Vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
 import VueJsx from '@vitejs/plugin-vue-jsx'
 import DefineOptions from 'unplugin-vue-define-options/vite'
+import AutoImport from 'unplugin-auto-import/vite'
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
@@ -23,5 +24,8 @@ export default defineConfig({
     Vue(),
     VueJsx(),
     DefineOptions(),
+    AutoImport({
+      imports: ['vue', '@vueuse/core'],
+    }),
   ],
 })

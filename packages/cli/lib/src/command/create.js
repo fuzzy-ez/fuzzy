@@ -116,19 +116,20 @@ function create(options) {
 exports.create = create;
 function renderTemplates(componentFolder, componentFolderName, renderData) {
     return __awaiter(this, void 0, void 0, function () {
-        var kebabCaseName, bigCamelizeName, style, codeSfc, codeTs, codeIndex, codeTest;
+        var kebabCaseName, bigCamelizeName, camelizeName, style, codeSfc, codeTs, codeIndex, codeProps, codeTest;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    kebabCaseName = renderData.kebabCaseName, bigCamelizeName = renderData.bigCamelizeName, style = renderData.style;
-                    codeSfc = "<script setup lang=\"ts\">\ndefineOptions({\n  name: 'F".concat(bigCamelizeName, "',\n})\n</script>\n\n<template>\n  <div class=\"").concat(kebabCaseName, "\">\n    <slot />\n  </div>\n</template>\n\n<style scoped lang=\"scss\">\n</style>");
+                    kebabCaseName = renderData.kebabCaseName, bigCamelizeName = renderData.bigCamelizeName, camelizeName = renderData.camelizeName, style = renderData.style;
+                    codeSfc = "<script setup lang=\"ts\">\ndefineOptions({\n  name: 'F".concat(bigCamelizeName, "',\n})\n</script>\n\n<template>\n  <div class=\"").concat(kebabCaseName, "\">\n    <slot />\n  </div>\n</template>\n\n<style scoped lang=\"scss\">\n\n</style>");
                     codeTs = "const props = {}\nexport default defineComponent({\n  name: 'F".concat(bigCamelizeName, "',\n  props,\n  setup(){\n    return {}\n  },\n  render(){\n    const {\n      $slots:slots,\n    } = this\n    return h('div', { class: F'").concat(bigCamelizeName, "' }, slots)\n  }\n})");
                     codeIndex = "import { withInstall } from '@fuzzy/utils'\nimport ".concat(bigCamelizeName, " from './src/").concat(componentFolderName, ".").concat(style, "'\n\nexport const F").concat(bigCamelizeName, " = withInstall(").concat(bigCamelizeName, ")\n\nexport default F").concat(bigCamelizeName);
+                    codeProps = "// import { definePropType } from '@fuzzy/utils'\nimport type { ExtractPropTypes } from 'vue'\n\nexport const ".concat(camelizeName, "Props = {}\n\nexport type ").concat(bigCamelizeName, "Props = ExtractPropTypes<typeof ").concat(camelizeName, "Props>\n  ");
                     codeTest = "import { mount } from '@vue/test-utils'\nimport {describe, test, expect} from '@jest/globals'\n\ndescribe('".concat(bigCamelizeName, " test', () => {\n  it('basic test',() => {\n\n  })\n})\n");
                     return [4 /*yield*/, Promise.all([
                             (0, fs_extra_1.ensureFile)("".concat(componentFolder, "/src/").concat(componentFolderName, ".").concat(style)),
                             (0, fs_extra_1.ensureFile)("".concat(componentFolder, "/style/index.scss")),
-                            (0, fs_extra_1.ensureFile)("".concat(componentFolder, "/props.ts")),
+                            (0, fs_extra_1.ensureFile)("".concat(componentFolder, "/src/props.ts")),
                             (0, fs_extra_1.ensureFile)("".concat(componentFolder, "/index.ts")),
                             (0, fs_extra_1.ensureFile)("".concat(componentFolder, "/__test__/index.spec.tsx")),
                         ])];
@@ -136,9 +137,9 @@ function renderTemplates(componentFolder, componentFolderName, renderData) {
                     _a.sent();
                     return [4 /*yield*/, Promise.all([
                             (0, fs_extra_1.writeFile)((0, path_1.resolve)("".concat(componentFolder, "/src"), "".concat(componentFolderName, ".").concat(style)), style === 'vue' ? codeSfc : codeTs),
-                            // writeFile(resolve(componentFolder, 'props.ts'), ''),
-                            (0, fs_extra_1.writeFile)((0, path_1.resolve)(componentFolder, 'index.ts'), codeIndex),
+                            (0, fs_extra_1.writeFile)((0, path_1.resolve)("".concat(componentFolder, "/src"), 'props.ts'), codeProps),
                             (0, fs_extra_1.writeFile)((0, path_1.resolve)(componentFolder, '__test__/index.spec.tsx'), codeTest),
+                            (0, fs_extra_1.writeFile)((0, path_1.resolve)(componentFolder, 'index.ts'), codeIndex),
                         ])];
                 case 2:
                     _a.sent();
