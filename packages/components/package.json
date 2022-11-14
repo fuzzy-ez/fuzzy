@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "build": "vite build && vue-tsc --declaration --emitDeclarationOnly --skipLibCheck && pnpm run --filter \"../fuzzy-ui\" build",
-    "stub": "vite build --watch && vue-tsc --declaration --emitDeclarationOnly --skipLibCheck ",
+    "stub": "vite build && pnpm run --filter \"../fuzzy-ui\" dev --watch ",
     "create": "fuzzy-cli create",
     "clean": "rimraf dist"
   },

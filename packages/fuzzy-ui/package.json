@@ -22,7 +22,7 @@
   },
   "scripts": {
     "build": "tsup",
-    "stub": "tsup --watch",
+    "dev": "tsup --watch",
     "clean": "rimraf dist"
   },
   "peerDependencies": {

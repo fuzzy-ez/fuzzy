@@ -18,8 +18,8 @@ const { n, is } = useNamespace('button')
 </script>
 
 <template>
-  <div :class="[
-    n('container'),
+  <button :class="[
+    n(),
     is('disabled', disabled),
     is('loading', loading),
     is('round', round),
@@ -28,15 +28,17 @@ const { n, is } = useNamespace('button')
   " @click="handleClick">
     <template v-if="loading">
       <slot v-if="$slots.loading" name="loading" />
-      <div v-else>
-        <!-- loading -->
-      </div>
+      <!-- loading -->
+      <div v-else :class="[
+        n('loadingbox'),
+      ]" />
     </template>
-  </div>
+    <span v-if="$slots.default">
+      <slot />
+    </span>
+  </button>
 </template>
 
-<style scoped>
-.FU_btn-container {
-  color: aquamarine;
-}
+<style scoped lang="scss">
+@import '../style/index.scss'
 </style>

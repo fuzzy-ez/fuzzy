@@ -27,7 +27,7 @@ type ClassName = string | undefined | null
 export type Classes = (ClassName | [any, ClassName, ClassName?])[]
 
 export function useNamespace(name: string) {
-  const namespace = `fuzzy-${name}`
+  const namespace = 'fuzzy'
   const bem = (blockSuffix?: string, element?: string, modifier?: string) =>
     _bem(namespace, name, blockSuffix, element, modifier)
 

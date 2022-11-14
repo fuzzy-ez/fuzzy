@@ -1,0 +1,29 @@
+.fuzzy-button {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  height: 32px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+  // color: aqua;
+  .fuzzy-button-loadingbox {
+    border: 1px dashed #ccc;
+    border-radius: 100%;
+    width: 1em;
+    height: 1em;
+    animation: spin 3s linear infinite;
+  }
+}
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

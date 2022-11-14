@@ -1,6 +1,6 @@
-import { withInstall } from '@fuzzy/utils'
-import Loading from './src/loading.ts'
+// import { withInstall } from '@fuzzy/utils'
+// import Loading from './src/loading'
 
-export const FLoading = withInstall(Loading)
+// export const FLoading = withInstall(Loading)
 
-export default FLoading
+// export default FLoading
