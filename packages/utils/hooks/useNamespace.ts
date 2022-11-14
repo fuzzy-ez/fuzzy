@@ -1,5 +1,8 @@
 import { isArray } from '../helper'
 
+// export const defaultNamespace = 'fu'
+const statePrefix = 'is'
+
 const _bem = (
   namespace: string,
   block: string,
@@ -26,9 +29,8 @@ export type Classes = (ClassName | [any, ClassName, ClassName?])[]
 export function useNamespace(name: string) {
   const namespace = `fuzzy-${name}`
   const bem = (blockSuffix?: string, element?: string, modifier?: string) =>
-    blockSuffix && element && modifier
-      ? _bem(namespace, name, blockSuffix, element, modifier)
-      : ''
+    _bem(namespace, name, blockSuffix, element, modifier)
+
   const classes = (...classes: Classes): any[] => {
     return classes.map((className) => {
       if (isArray(className)) {
@@ -41,9 +43,19 @@ export function useNamespace(name: string) {
     })
   }
 
+  const is: {
+    (name: string, state: boolean | undefined): string
+    (name: string): string
+  } = (name: string, ...args: [boolean | undefined] | []) => {
+    const state = args.length >= 1 ? args[0]! : true
+
+    return name && state ? `${statePrefix}${name}` : ''
+  }
+
   return {
     namespace,
     n: bem,
     classes,
+    is,
   }
 }
