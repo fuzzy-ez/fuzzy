@@ -1,15 +1,30 @@
 .fuzzy-button {
-  display: flex;
-  gap: 0.5rem;
+  display: inline-flex;
+  justify-content: center;
   align-items: center;
+  line-height: 1;
   height: 32px;
-  border: 0;
-  background-color: transparent;
+  white-space: nowrap;
   cursor: pointer;
+  color: var(--el-button-text-color);
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: .1s;
+  font-weight: var(--el-button-font-weight);
+  user-select: none;
+  vertical-align: middle;
+  background-color: var(--el-button-bg-color);
+  border: var(--el-border);
+  border-color: var(--el-button-border-color);
+  padding: 8px 15px;
+  font-size: var(--el-font-size-base);
+  border-radius: var(--el-border-radius-base);
 
   // color: aqua;
   .fuzzy-button-loadingbox {
-    border: 1px dashed #ccc;
+    border: 1px solid transparent;
+    border-left-color: #ccc;
     border-radius: 100%;
     width: 1em;
     height: 1em;
