@@ -2,7 +2,7 @@
 
 import cac from 'cac'
 import { version } from '../package.json'
-import { create } from './command'
+import { build, create } from './command'
 
 const cli = cac()
 
@@ -12,6 +12,12 @@ cli
   .option('-t , --tsx', 'Generate files in tsx format')
   .option('-f , --sfc', 'Generate files in vue3 format')
   .action(create)
+
+cli
+  .command('build', 'build script')
+  .option('-s , -scss <scss>', 'build scss file')
+  .option('-a , -all <all>', 'build all file')
+  .action(build)
 
 cli.version(version)
 cli.help()
