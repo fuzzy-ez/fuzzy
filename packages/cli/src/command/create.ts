@@ -142,8 +142,7 @@ export type ${bigCamelizeName}Props = ExtractPropTypes<typeof ${camelizeName}Pro
   `
 
   const codeTest
-    = `import { mount } from '@vue/test-utils'
-import {describe, test, expect} from '@jest/globals'
+    = `import { describe,it } from 'vitest'
 
 describe('${bigCamelizeName} test', () => {
   it('basic test',() => {

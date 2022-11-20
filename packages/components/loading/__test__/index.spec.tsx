@@ -1,8 +1,7 @@
-import { mount } from '@vue/test-utils'
-import {describe, test, expect} from '@jest/globals'
+import { describe, it } from 'vitest'
 
 describe('Loading test', () => {
-  it('basic test',() => {
+  it('basic test', () => {
 
   })
 })

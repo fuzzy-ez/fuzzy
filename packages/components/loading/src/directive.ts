@@ -1,4 +1,4 @@
-import type { DirectiveBinding, UnwrapRef } from 'vue'
+import type { UnwrapRef } from 'vue'
 
 import type { LoadingOptions } from './types'
 import type { LoadingInstance } from './loading'
@@ -13,16 +13,3 @@ export interface FUementLoading extends HTMLElement {
   }
 }
 
-const createInstance = (
-  el: FUementLoading,
-  binding: DirectiveBinding<LoadingBinding>,
-) => {
-  const vm = binding.instance
-  const options: LoadingOptions = {
-
-  }
-  // el[INSTANCE_KEY] = {
-  //   options,
-  //   instance: Loading(options),
-  // }
-}

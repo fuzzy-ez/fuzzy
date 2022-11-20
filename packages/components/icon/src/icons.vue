@@ -10,16 +10,18 @@ const { n, classes, namespace } = useNamespace('icon')
 </script>
 
 <template>
-  <i :class="
-    classes(
-      n(),
-      `${namespace}--set`,
-      `${namespace}-${props.name}`,
-    )
-  " :style="{
+  <i
+    :class="
+      classes(
+        n(),
+        `${namespace}--set`,
+        `${namespace}-${props.name}`,
+      )
+    " :style="{
       fontSize: `${props.size}px`,
       color: props.color,
-    }" />
+    }"
+  />
 </template>
 
 <style scoped lang="scss">
