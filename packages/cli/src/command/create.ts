@@ -88,11 +88,12 @@ export async function renderTemplates(
   const {
     kebabCaseName,
     bigCamelizeName,
+    camelizeName,
     style,
   } = renderData
 
   const codeSfc
-  = `<script setup lang="ts">
+    = `<script setup lang="ts">
 defineOptions({
   name: 'F${bigCamelizeName}',
 })
@@ -105,9 +106,10 @@ defineOptions({
 </template>
 
 <style scoped lang="scss">
+
 </style>`
   const codeTs
-  = `const props = {}
+    = `const props = {}
 export default defineComponent({
   name: 'F${bigCamelizeName}',
   props,
@@ -118,20 +120,29 @@ export default defineComponent({
     const {
       $slots:slots,
     } = this
-    return h('div', { class: F'${bigCamelizeName}' }, slots)
+
+    return h('div', { class: 'F${bigCamelizeName}' }, slots)
   }
 })`
   const codeIndex
-= `import { withInstall } from '@fuzzy/utils'
+    = `import { withInstall } from '@fuzzy/utils'
 import ${bigCamelizeName} from './src/${componentFolderName}.${style}'
 
 export const F${bigCamelizeName} = withInstall(${bigCamelizeName})
 
 export default F${bigCamelizeName}`
 
+  const codeProps
+    = `// import { definePropType } from '@fuzzy/utils'
+import type { ExtractPropTypes } from 'vue'
+
+export const ${camelizeName}Props = {}
+
+export type ${bigCamelizeName}Props = ExtractPropTypes<typeof ${camelizeName}Props>
+  `
+
   const codeTest
-= `import { mount } from '@vue/test-utils'
-import {describe, test, expect} from '@jest/globals'
+    = `import { describe,it } from 'vitest'
 
 describe('${bigCamelizeName} test', () => {
   it('basic test',() => {
@@ -142,14 +153,14 @@ describe('${bigCamelizeName} test', () => {
   await Promise.all([
     ensureFile(`${componentFolder}/src/${componentFolderName}.${style}`),
     ensureFile(`${componentFolder}/style/index.scss`),
-    ensureFile(`${componentFolder}/props.ts`),
+    ensureFile(`${componentFolder}/src/props.ts`),
     ensureFile(`${componentFolder}/index.ts`),
     ensureFile(`${componentFolder}/__test__/index.spec.tsx`),
   ])
   await Promise.all([
     writeFile(resolve(`${componentFolder}/src`, `${componentFolderName}.${style}`), style === 'vue' ? codeSfc : codeTs),
-    // writeFile(resolve(componentFolder, 'props.ts'), ''),
-    writeFile(resolve(componentFolder, 'index.ts'), codeIndex),
+    writeFile(resolve(`${componentFolder}/src`, 'props.ts'), codeProps),
     writeFile(resolve(componentFolder, '__test__/index.spec.tsx'), codeTest),
+    writeFile(resolve(componentFolder, 'index.ts'), codeIndex),
   ])
 }

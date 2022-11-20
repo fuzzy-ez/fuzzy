@@ -1,4 +1,8 @@
-## fuzzy
+<p align="center">
+  <img width="110px" src="./public/fuzzy-logo.png">
+</p>
+
+<h1 align="center">fuzzy-UI (WIP)</h1>
 
 >  record a ui start from scratch, 
 >  and learn some new things , 
@@ -6,10 +10,19 @@
 >  make some notes , 
 >  do something cool
 
+just cant now🤒
 ### use
 
 ```bash
 ni fuzzy-ui
 ```
 
-if you are interested in this , welcome `pr`
+NOW:
+ - [ ] refactor build tools...& ci/cd
+
+TODO:
+ - [ ] components
+ - [ ] docs
+ - [ ] play
+
+

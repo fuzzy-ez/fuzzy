@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useNamespace } from '@fuzzy/utils'
-import { iconProps } from '../props'
+import { iconProps } from './props'
 const props = defineProps(iconProps)
 
 defineOptions({
@@ -17,8 +17,7 @@ const { n, classes, namespace } = useNamespace('icon')
         `${namespace}--set`,
         `${namespace}-${props.name}`,
       )
-    "
-    :style="{
+    " :style="{
       fontSize: `${props.size}px`,
       color: props.color,
     }"

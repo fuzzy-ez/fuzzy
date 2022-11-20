@@ -5,10 +5,13 @@
 
 <template>
   <div>
-    <f-button />
+    <f-button loading>
+      click
+    </f-button>
     <f-icon name="checkbox-marked-circle" :size="26" color="red" />
   </div>
 </template>
 
 <style scoped>
+
 </style>
